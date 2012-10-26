@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectLocalStorage", "ObjectLocalStorage\ObjectLocalStorage.csproj", "{71A2E78B-E29C-4423-8BD2-52996F5B4E87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectLocalStorage.UnitTest", "ObjectLocalStorage.UnitTest\ObjectLocalStorage.UnitTest.csproj", "{83918254-CBF8-4C20-9E4A-13DECE1FF113}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{71A2E78B-E29C-4423-8BD2-52996F5B4E87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A2E78B-E29C-4423-8BD2-52996F5B4E87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71A2E78B-E29C-4423-8BD2-52996F5B4E87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71A2E78B-E29C-4423-8BD2-52996F5B4E87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83918254-CBF8-4C20-9E4A-13DECE1FF113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83918254-CBF8-4C20-9E4A-13DECE1FF113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83918254-CBF8-4C20-9E4A-13DECE1FF113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83918254-CBF8-4C20-9E4A-13DECE1FF113}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
