@@ -5,15 +5,26 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Extensions;
 
-public class ObjectLocalStorageTests
+public class sutTests
 {
+    [Fact]
+    public void SutIsObjectLocalStorage()
+    {
+        // Fixture setup
+        var sut = new ObjectLocalStorage();
+        // Exercise system and verify outcome
+        Assert.IsAssignableFrom<IObjectLocalStorage>(sut);
+        // Teardown
+    }
+
     [Theory, AutoData]
     public void GetWhenSetIsNotInvokedForObjectReturnsCorrectResult(
         DateTime @object)
     {
         // Fixture setup
+        var sut = new ObjectLocalStorage();
         // Exercise system
-        object result = ObjectLocalStorage.Get(@object);
+        object result = sut.Get(@object);
         // Verify outcome
         Assert.Null(result);
         // Teardown
@@ -28,9 +39,10 @@ public class ObjectLocalStorageTests
         string expected)
     {
         // Fixture setup
+        var sut = new ObjectLocalStorage();
         // Exercise system
-        ObjectLocalStorage.Set(@object, expected);
-        object result = ObjectLocalStorage.Get(@object);
+        sut.Set(@object, expected);
+        object result = sut.Get(@object);
         // Verify outcome
         Assert.Equal(expected, result);
         // Teardown
@@ -38,16 +50,17 @@ public class ObjectLocalStorageTests
 
     [Theory, AutoData]
     public void GetReturnsCorrectResultMultipleCall(
-        object @object, 
+        object @object,
         string dummy,
         double expected)
     {
         // Fixture setup
-        Array.ForEach(new int[3], x => ObjectLocalStorage.Set(@object, dummy));
+        var sut = new ObjectLocalStorage();
+        Array.ForEach(new int[3], x => sut.Set(@object, dummy));
         // Exercise system
-        ObjectLocalStorage.Set(@object, expected);
+        sut.Set(@object, expected);
         // Verify outcome
-        object result = ObjectLocalStorage.Get(@object);
+        object result = sut.Get(@object);
         // Teardown
         Assert.Equal(expected, result);
     }
@@ -56,8 +69,9 @@ public class ObjectLocalStorageTests
     public void GetForNullReferenceReturnsCorrectResult(object @object)
     {
         // Fixture setup
+        var sut = new ObjectLocalStorage();
         // Exercise system
-        object result = ObjectLocalStorage.Get(@object);
+        object result = sut.Get(@object);
         // Verify outcome
         Assert.Null(result);
         // Teardown
@@ -72,10 +86,11 @@ public class ObjectLocalStorageTests
         string expected)
     {
         // Fixture setup
-        ObjectLocalStorage.Set(@object, expected);
+        var sut = new ObjectLocalStorage();
+        sut.Set(@object, expected);
         object result = null;
         // Exercise system
-        new Task(() => result = ObjectLocalStorage.Get(@object)).Start();
+        new Task(() => result = sut.Get(@object)).Start();
         SpinWait.SpinUntil(() => result != null);
         // Verify outcome
         Assert.Equal(expected, result);
@@ -92,9 +107,10 @@ public class ObjectLocalStorageTests
         string expected)
     {
         // Fixture setup
-        ObjectLocalStorage.Set(dummy, expected);
+        var sut = new ObjectLocalStorage();
+        sut.Set(dummy, expected);
         // Exercise system
-        object result = ObjectLocalStorage.Get(@object);
+        object result = sut.Get(@object);
         // Verify outcome
         Assert.Null(result);
         // Teardown

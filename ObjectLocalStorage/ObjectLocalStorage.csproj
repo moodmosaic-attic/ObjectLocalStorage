@@ -33,6 +33,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IObjectLocalStorage.cs" />
     <Compile Include="ObjectLocalStorage.cs" />
   </ItemGroup>
   <ItemGroup>
