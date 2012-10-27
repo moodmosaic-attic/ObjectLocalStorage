@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Xunit;
 using Xunit.Extensions;
 
-public class sutTests
+public class ObjectLocalStorageTests
 {
     [Fact]
     public void SutIsObjectLocalStorage()
